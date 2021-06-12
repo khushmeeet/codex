@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Codex</title>
+</head>
+<body>
+    <form method="post" action="{{ url_for('new_document') }}">
+        <textarea rows="7" cols="33" name="content"></textarea>
+        <label>source</label>
+        <input type="text" name="source">
+        <label>source_type</label>
+        <input type="text" name="source_type">
+        <button name="button" type="submit">Go</button>
+    </form>
+    {% if documents %}
+        {% for doc in documents %}
+            <div>
+                <p>{{ doc.content }}</p>
+                <em>{{ doc.source }}</em>
+            </div>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
