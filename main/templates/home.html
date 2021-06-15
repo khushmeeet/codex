@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Hello</h1>
+    {% for note in all_notes%}
+        <h3>{{ note.content }}</h3>
+    {% endfor %}
+    {% if form %}
+        <form action="{% url 'new_note' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
 {% endblock %}
