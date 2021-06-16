@@ -14,6 +14,7 @@ class Notes(models.Model):
         (PDF, 'PDF')
     ]
 
+    id = models.IntegerField(primary_key=True, unique=True)
     content = models.TextField()
     source = models.CharField(max_length=500)
     url = models.URLField()

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if form %}
+        <form action="{% url 'new_note' %}" method="post">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+    {% if note %}
+        <form action="{% url 'edit_note' %}" method="put">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+{% endblock %}
