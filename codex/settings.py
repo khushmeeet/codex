@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
+    'compressor',
+    'widget_tweaks',
     'main'
 ]
 
@@ -52,10 +53,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'codex.urls'
-
-COMPRESS_PRECOMPILERS = (
-    ('text/x-scss', 'django_libsass.SassCompiler'),
-)
 
 TEMPLATES = [
     {
@@ -76,6 +73,14 @@ TEMPLATES = [
 STATICFILES_DIR = [
     'main/static'
 ]
+
+STATICFILES_FINDERS = [
+    'compressor.finders.CompressorFinder'
+]
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
 
 WSGI_APPLICATION = 'codex.wsgi.application'
 
@@ -128,6 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'main/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

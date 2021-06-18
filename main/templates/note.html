@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% load widget_tweaks %}
 {% block content %}
     {% if form %}
         <form action="{% url 'new_note' %}" method="post">
             {% csrf_token %}
-            {{ form | crispy }}
-            <input type="submit" value="Submit">
+            <input type="submit" value="Commit" class="submit-button">
+            <div id="new-note-form-header">
+                {% render_field form.source placeholder="Source of the text..." %}
+                {% render_field form.url placeholder="URL of the source, if any..." %}
+                {% render_field form.source_type %}
+            </div>
+            {% render_field form.content placeholder="write something..." id="note-content" %}
         </form>
     {% endif %}
     {% if note %}
