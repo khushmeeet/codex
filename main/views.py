@@ -24,6 +24,8 @@ def new_note(request):
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if form.is_valid():
+            print(repr(form.cleaned_data['content']))
+            print(form.cleaned_data['content'])
             note = Notes(
                 content=form.cleaned_data['content'],
                 source=form.cleaned_data['source'],
