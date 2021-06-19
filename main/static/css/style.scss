@@ -2,6 +2,7 @@ body {
 	margin-top: 20px;
 }
 
+// base.html
 #header {
 	display: inline-flex;
 	margin-bottom: 20px;
@@ -22,11 +23,30 @@ body {
 	}
 }
 
+//home.html
+#sheet {
+	display: flex;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+
+	div {
+		display: flex;
+		width: 30%;
+		flex-grow: 1;
+
+		p {
+			padding: 10px;
+			border: 2px black solid;
+			flex: 1 1 auto;
+		}
+	}
+}
+
+// note.html
 .submit-button {
 	border: 2px black solid;
-	color: white;
-	background-color: black;
-	border-radius: 5px;
+	color: black;
+	background-color: white;
 	float: right;
 	margin: 20px 0px 10px 0px;
 }
@@ -40,7 +60,7 @@ body {
 		width: 100%;
 		padding: 5px;
 		margin: 5px 5px 5px 0px;
-		border-radius: 5px;
+		border: 2px solid black;
 		&:focus {
 			outline: none;
 		}
@@ -54,8 +74,9 @@ body {
 
 #note-content {
 	width: 100%;
-	padding: 5px;
+	margin-top: 10px;
 	border: none;
+	white-space: pre-wrap;
 	&:focus {
 		outline: none;
 	}
