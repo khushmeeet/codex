@@ -16,7 +16,7 @@ class Notes(models.Model):
 
     id = models.IntegerField(primary_key=True, unique=True)
     content = models.TextField()
-    source = models.CharField(max_length=500)
+    entity = models.CharField(max_length=500)
     url = models.URLField()
     added_on = models.DateTimeField()
     source_type = models.CharField(max_length=25, choices=SOURCE_TYPE_CHOICES)

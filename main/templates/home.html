@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div id="sheet">
+    <div id="notes-list">
         {% for note in all_notes%}
             <div>
-                <pre>{{ note.content }}</pre>
+                {{ note.content | safe }}
             </div>
         {% endfor %}
     </div>

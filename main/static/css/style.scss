@@ -1,5 +1,11 @@
+@import url('satoshi.css');
+
+$yellow: rgb(255, 216, 3);
+$black: rgb(39, 35, 67);
+
 body {
 	margin-top: 20px;
+	font-family: "Satoshi-Bold", monospace;
 }
 
 // base.html
@@ -15,7 +21,7 @@ body {
 
 	a {
 		text-decoration: none;
-		color: black;
+		color: $black;
 
 		&:not(:first-child) {
 			margin-left: 15px;
@@ -31,31 +37,39 @@ body {
 }
 
 //home.html
-#sheet {
+#notes-list {
 	display: flex;
 	flex-wrap: wrap;
 	-webkit-flex-wrap: wrap;
 
 	div {
-		display: flex;
-		width: 25%;
-		border: 2px black solid;
+		width: 32.5%;
+		border: 2px solid $black;
+		margin: 5px;
+		padding: 10px;
 
-		pre {
-			padding: 10px;
-			width: 100%;
-			word-break: break-word;
+		h1, h2, h3, h4, h5, h6 {
+			font-size: x-large;
 		}
 	}
 }
 
 // note.html
+section {
+	height: 100%;
+
+	form {
+		height: 100%;
+	}
+}
+
 .submit-button {
-	border: 2px black solid;
-	color: black;
-	background-color: white;
+	border: 2px solid $yellow;
+	color: $black;
+	background-color: $yellow;
+	padding: 4px 10px 4px 10px;
 	float: right;
-	margin: 20px 0px 10px 0px;
+	margin: 20px 0 10px 0;
 }
 
 #new-note-form-header {
@@ -65,9 +79,10 @@ body {
 
 	input {
 		width: 100%;
-		padding: 5px;
-		margin: 5px 5px 5px 0px;
-		border: 2px solid black;
+		padding: 5px 5px 5px 10px;
+		margin: 5px 10px 5px 0px;
+		border: 2px solid $black;
+
 		&:focus {
 			outline: none;
 		}
@@ -81,8 +96,10 @@ body {
 
 #note-content {
 	width: 100%;
+	height: 100%;
 	margin-top: 10px;
-	border: none;
+	padding: 10px;
+	border: 2px solid $black;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
 	&:focus {
