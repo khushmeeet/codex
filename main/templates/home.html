@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
     <div id="notes-list">
-        {% for note in all_notes%}
+        {% if all_notes %}
+            {% for note in all_notes%}
+                <span data-link="{% url 'view_note' note.id %}" onclick="new_note(this.id)" id="{{ note.id }}">
+                    <div>
+                        {{ note.content | safe }}
+                    </div>
+                </span>
+            {% endfor %}
+        {% else %}
             <div>
-                {{ note.content | safe }}
+                Codex Empty
             </div>
-        {% endfor %}
+        {% endif %}
     </div>
 {% endblock %}

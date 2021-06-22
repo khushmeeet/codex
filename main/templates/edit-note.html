@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <section>
+        <form action="{% url 'edit_note' id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Commit" class="submit-button">
+            <div class="new-note-form-header">
+                {{ form.entity }}
+                {{ form.url }}
+                {{ form.source_type }}
+            </div>
+            {% render_field form.content class="note-content" %}
+        </form>
+    </section>
+{% endblock %}

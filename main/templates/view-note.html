@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <section>
+        <a href="{% url 'edit_note' note.id %}" class="submit-button">Edit Note</a>
+        <div>
+            <div class="new-note-form-header">
+                <div>Entity: {{ note.entity }}</div>
+                {% if note.url %}
+                <div>URL: {{ note.url }}</div>
+                {% else %}
+                <div>URL: ~</div>
+                {% endif %}
+                <div>Entity Type: {{ note.source_type }}</div>
+            </div>
+            <div class="note-content">
+                {{ note.content | safe }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
