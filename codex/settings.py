@@ -30,7 +30,10 @@ SECRET_KEY = 'django-insecure-ea+6q11eyhza8phz=(1y#g%b5$trk-+@es)ohz4_jf&15et605
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default='127.0.0.1').split(" ")
+
+# Porter allow CIDERs
+ALLOWED_CIDR_NETS = os.environ.get("ALLOWED_CIDR_NETS", default='10.99.0.0/16').split(" ")
 
 
 # Application definition
@@ -55,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allow_cidr.middleware.AllowCIDRMiddleware'
 ]
 
 ROOT_URLCONF = 'codex.urls'
@@ -142,7 +146,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'main/static'
+STATIC_ROOT = 'main/staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
