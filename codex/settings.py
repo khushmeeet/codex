@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ea+6q11eyhza8phz=(1y#g%b5$trk-+@es)ohz4_jf&15et605'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default='127.0.0.1').split(" ")
 
@@ -79,12 +79,12 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIR = [
-    'main/static'
-]
-
 STATICFILES_FINDERS = [
     'compressor.finders.CompressorFinder'
+]
+
+STATICFILES_DIRS = [
+    'main/static',
 ]
 
 COMPRESS_PRECOMPILERS = (
@@ -146,11 +146,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/staticfiles'
+STATIC_ROOT = 'main/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
