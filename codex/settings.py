@@ -13,6 +13,7 @@ import os
 from urllib.parse import urlencode, quote_plus
 from dotenv import load_dotenv
 from pathlib import Path
+import django_heroku
 
 # Load .env file
 load_dotenv()
@@ -31,9 +32,6 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default='127.0.0.1').split(" ")
-
-# Porter allow CIDERs
-ALLOWED_CIDR_NETS = os.environ.get("ALLOWED_CIDR_NETS", default='10.99.0.0/16').split(" ")
 
 
 # Application definition
@@ -152,3 +150,5 @@ STATIC_ROOT = 'main/static'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
