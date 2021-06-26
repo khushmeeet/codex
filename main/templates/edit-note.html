@@ -6,11 +6,12 @@
             {% csrf_token %}
             <input type="submit" value="Commit" class="submit-button">
             <div class="new-note-form-header">
-                {{ form.entity }}
-                {{ form.url }}
-                {{ form.source_type }}
+                {{ note_form.entity }}
+                {{ note_form.url }}
+                {{ tag_form.tag }}
+                {{ note_form.source_type }}
             </div>
-            {% render_field form.content class="note-content" %}
+            {% render_field note_form.content class="note-content" %}
         </form>
     </section>
 {% endblock %}
