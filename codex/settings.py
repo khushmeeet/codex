@@ -101,7 +101,7 @@ DATABASES = {
         'NAME': 'codex',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb+srv://cdx:cdx@cluster0.bchlt.mongodb.net/codex?retryWrites=true&w=majority&ssl_cert_reqs=CERT_NONE'
+            'host': os.environ.get('MONGO_HOST')
         }
     }
 }
@@ -144,7 +144,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-COMPRESS_ROOT = os.path.join(BASE_DIR, 'main/static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'main/static')
 
 # Default primary key field type
