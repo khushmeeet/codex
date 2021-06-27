@@ -83,3 +83,8 @@ def edit_note(request, id):
             'id': note.id
         }
         return render(request, 'edit-note.html', context)
+
+
+def delete_note(request, id):
+    Notes.objects.filter(id=id).delete()
+    return redirect('notes_list')

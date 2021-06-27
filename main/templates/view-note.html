@@ -2,6 +2,7 @@
 {% load widget_tweaks %}
 {% block content %}
     <section>
+        <a href="{% url 'delete_note' note.id %}" class="submit-button">Delete Note</a>
         <a href="{% url 'edit_note' note.id %}" class="submit-button">Edit Note</a>
         <div>
             <div class="new-note-form-header">
