@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from main.models import Notes, Tags
 from main.forms import NoteForm, TagForm
+from .utils import safe_html_trim
 import markdown
 from markdownify import markdownify as md
 import datetime
@@ -10,6 +11,8 @@ html = markdown.Markdown(extensions=['extra', 'codehilite', 'nl2br', 'sane_lists
 
 def notes_list(request):
     all_notes = Notes.objects.all()
+    for note in all_notes:
+        note.content = safe_html_trim(note.content)
     context = {
         'all_notes': all_notes
     }

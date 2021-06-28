@@ -1,0 +1,120 @@
+@import url("/static/css/satoshi.css?6b3c87fd90a3");
+/* line 6, static/css/style.scss */
+body {
+  margin-top: 20px;
+  font-family: "Satoshi-Bold", monospace; }
+
+/* line 11, static/css/style.scss */
+input:focus {
+  outline: none; }
+
+/* line 15, static/css/style.scss */
+textarea:focus {
+  outline: none; }
+
+/* line 20, static/css/style.scss */
+#header {
+  display: inline-flex;
+  margin-bottom: 20px;
+  width: 100%;
+  flex-shrink: 0; }
+  /* line 26, static/css/style.scss */
+  #header div {
+    margin: auto 0px auto auto; }
+  /* line 30, static/css/style.scss */
+  #header a {
+    text-decoration: none;
+    color: #272343;
+    cursor: pointer; }
+    /* line 35, static/css/style.scss */
+    #header a:not(:first-child) {
+      margin-left: 15px; }
+    /* line 39, static/css/style.scss */
+    #header a img {
+      width: 40px;
+      height: 40px;
+      display: block;
+      margin: auto auto auto 4px; }
+
+/* line 49, static/css/style.scss */
+#notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  height: 100%; }
+  /* line 55, static/css/style.scss */
+  #notes-list > div {
+    margin: auto;
+    color: gainsboro; }
+  /* line 60, static/css/style.scss */
+  #notes-list > span {
+    width: 32.5%;
+    border: 2px solid #272343;
+    margin: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer; }
+    /* line 69, static/css/style.scss */
+    #notes-list > span h1, #notes-list > span h2, #notes-list > span h3, #notes-list > span h4, #notes-list > span h5, #notes-list > span h6 {
+      font-size: x-large; }
+  /* line 73, static/css/style.scss */
+  #notes-list #weblinks-form {
+    margin-top: 50px;
+    border: 2px solid #272343; }
+    /* line 77, static/css/style.scss */
+    #notes-list #weblinks-form input {
+      padding: 5px 5px 5px 10px; }
+
+/* line 84, static/css/style.scss */
+section {
+  height: 100%; }
+  /* line 87, static/css/style.scss */
+  section .submit-button {
+    text-decoration: none; }
+
+/* line 93, static/css/style.scss */
+section {
+  height: 100%;
+  display: block; }
+  /* line 98, static/css/style.scss */
+  section form {
+    height: 100%; }
+
+/* line 103, static/css/style.scss */
+.submit-button {
+  border: 2px solid #ffd803;
+  color: #272343;
+  background-color: #ffd803;
+  padding: 4px 10px 4px 10px;
+  float: right;
+  margin: 20px 0 10px 10px; }
+
+/* line 112, static/css/style.scss */
+.new-note-form-header {
+  width: 100%;
+  display: flex;
+  flex: auto; }
+  /* line 117, static/css/style.scss */
+  .new-note-form-header input, .new-note-form-header div {
+    width: 100%;
+    padding: 5px 5px 5px 10px;
+    margin: 5px 10px 5px 0px;
+    border: 2px solid #272343; }
+    /* line 123, static/css/style.scss */
+    .new-note-form-header input:last-child, .new-note-form-header div:last-child {
+      margin-right: 0; }
+  /* line 128, static/css/style.scss */
+  .new-note-form-header select {
+    margin: auto 0px auto 5px;
+    padding: 5px; }
+
+/* line 137, static/css/style.scss */
+.note-content {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #272343;
+  white-space: pre-wrap;
+  overflow-wrap: break-word; }

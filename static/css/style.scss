@@ -8,6 +8,14 @@ body {
 	font-family: "Satoshi-Bold", monospace;
 }
 
+input:focus {
+	outline: none;
+}
+
+textarea:focus {
+	outline: none;
+}
+
 // base.html
 #header {
 	display: inline-flex;
@@ -104,10 +112,6 @@ section {
 		margin: 5px 10px 5px 0px;
 		border: 2px solid $black;
 
-		&:focus {
-			outline: none;
-		}
-
 		&:last-child {
 			margin-right: 0;
 		}
@@ -130,7 +134,14 @@ section {
 	border: 2px solid $black;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
-	&:focus {
-		outline: none;
-	}
 }
+
+// weblinks.html
+#weblinks-form {
+		margin-top: 50px;
+		border: 2px solid $black;
+
+		input {
+			padding: 5px 5px 5px 10px;
+		}
+	}
