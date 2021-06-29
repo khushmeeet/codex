@@ -1,4 +1,4 @@
-def save_html_page(soup):
+def parse_html_page(soup):
     text = ""
     for i in soup.body.descendants:
         if i.name == 'section' or i.name == 'article' or i.name == 'main':

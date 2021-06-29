@@ -75,23 +75,18 @@ textarea:focus {
 // view-note.html
 section {
 	height: 100%;
+	display: block;
 
 	.submit-button {
 		text-decoration: none;
 	}
+
+	//form {
+	//	height: 100%;
+	//}
 }
 
 // new-note.html & edit-note.html
-section {
-	height: 100%;
-
-	display: block;
-
-	form {
-		height: 100%;
-	}
-}
-
 .submit-button {
 	border: 2px solid $yellow;
 	color: $black;
@@ -121,9 +116,6 @@ section {
 		margin: auto 0px auto 5px;
 		padding: 5px;
 	}
-
-	// view-note.html
-
 }
 
 .note-content {
@@ -137,11 +129,8 @@ section {
 }
 
 // weblinks.html
-#weblinks-form {
-		margin-top: 50px;
-		border: 2px solid $black;
-
-		input {
-			padding: 5px 5px 5px 10px;
-		}
-	}
+#url {
+	padding: 5px 5px 5px 10px;
+	width: 100%;
+	border: 2px solid $black;
+}

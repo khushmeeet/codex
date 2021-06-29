@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div>
-        <div id="weblinks-form">
+    <section>
+        <form action="{% url 'save_webpage' %}" method="post">
+            {% csrf_token %}
+            <button class="submit-button">Save</button>
             <input type="url" name="url" id="url" placeholder="Enter an URL for saving..." size="50" required>
-        </div>
-        <div>
-            {{ data | safe}}
-        </div>
-    </div>
+        </form>
+        {% if data %}
+            <div>
+                {{ data | safe}}
+            </div>
+        {% endif %}
+    </section>
 {% endblock %}
