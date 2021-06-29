@@ -2,20 +2,14 @@ from django.shortcuts import render
 from bs4 import BeautifulSoup
 import requests
 from markdownify import markdownify as md
+from .utils import save_html_page
+
 
 def new_weblink(request):
-    resp = requests.get('https://realpython.com/python-web-scraping-practical-introduction')
+    resp = requests.get('https://jeremycollins.net/using-a-raspberry-pi-as-a-nas-mac-os-time-machine-2020-edition')
     soup = BeautifulSoup(resp.text, 'html.parser')
-    text = ""
-    for i in soup.body.descendants:
-        if i.name == 'section':
-            cc = ''
-            for c in i.contents:
-                cc += str(c)
-            text += cc
-
-    print(md(text))
+    html_text = save_html_page(soup)
     context = {
-        'data': text
+        'data': html_text
     }
     return render(request, 'weblinks.html', context)
