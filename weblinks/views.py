@@ -3,15 +3,17 @@ from bs4 import BeautifulSoup
 import requests
 from markdownify import markdownify as md
 from .utils import parse_html_page
+from newspaper import Article, Config
 
 
 def save_webpage(request):
     if request.method == 'POST':
-        resp = requests.get(request.POST['url'])
-        soup = BeautifulSoup(resp.text, 'html.parser')
-        html_text = parse_html_page(soup)
+        article = Article(request.POST['url'], keep_article_html=True, fetch_images=True)
+        article.download()
+        article.parse()
+        resp = article.article_html
         context = {
-            'data': html_text
+            'data': resp
         }
         return render(request, 'weblinks.html', context)
     else:
