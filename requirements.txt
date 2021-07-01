@@ -2,6 +2,9 @@ asgiref==3.3.4; python_version >= "3.6"
 beautifulsoup4==4.9.3
 certifi==2021.5.30; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 chardet==4.0.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+click==8.0.1; python_version >= "3.6"
+colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and platform_system == "Windows" or platform_system == "Windows" and python_version >= "3.6" and python_full_version >= "3.5.0"
+cssselect==1.1.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
 dataclasses==0.6; python_version >= "3.6"
 django-allow-cidr==0.3.1
 django-appconf==1.0.4
@@ -12,20 +15,36 @@ django-widget-tweaks==1.4.8
 django==3.2.4; python_version >= "3.6"
 djongo==1.3.6; python_version >= "3.6"
 dnspython==2.1.0; python_version >= "3.6"
+feedfinder2==0.0.4
+feedparser==6.0.8; python_version >= "3.6"
+filelock==3.0.12; python_version >= "3.5"
 gunicorn==20.1.0; python_version >= "3.5"
-idna==2.10; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+idna==2.10; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5"
+jieba3k==0.35.1
+joblib==1.0.1; python_version >= "3.6"
 libsass==0.21.0
+lxml==4.6.3; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 markdown==3.3.4; python_version >= "3.6"
 markdownify==0.9.0
 netaddr==0.8.0
+newspaper3k==0.2.8
+nltk==3.6.2; python_version >= "3.5"
+pillow==8.2.0; python_version >= "3.6"
 pymongo==3.11.4; python_version >= "3.6"
+python-dateutil==2.8.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.3.0"
 python-dotenv==0.18.0
 pytz==2021.1; python_version >= "3.6"
+pyyaml==5.4.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0"
 rcssmin==1.0.6
+regex==2021.4.4; python_version >= "3.5"
+requests-file==1.5.1; python_version >= "3.5"
 requests==2.25.1; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 rjsmin==1.1.0
-six==1.16.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.3.0"
+sgmllib3k==1.0.0; python_version >= "3.6"
+six==1.16.0; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.5"
 soupsieve==2.2.1; python_version >= "3.6"
 sqlparse==0.2.4; python_version >= "3.6"
+tinysegmenter==0.3
+tldextract==3.1.0; python_version >= "3.5"
+tqdm==4.61.1; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.5"
 urllib3==1.26.6; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4"
-django_heroku
