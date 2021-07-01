@@ -6,9 +6,9 @@
             <button class="submit-button">Save</button>
             <input type="url" name="url" id="url" placeholder="Enter an URL for saving..." size="50" required>
         </form>
-        {% if data %}
+        {% if article %}
             <div>
-                {{ data | safe}}
+                {{ article | safe}}
             </div>
         {% endif %}
     </section>
