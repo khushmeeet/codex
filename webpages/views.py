@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect
-from bs4 import BeautifulSoup
+from django.shortcuts import render, redirect, get_object_or_404
 import requests
 import datetime
 from markdownify import markdownify as md
@@ -16,7 +15,15 @@ def list_webpages(request):
     context = {
         'all_external_data': all_external_data
     }
-    return render(request, 'main.html', context)
+    return render(request, 'webpage-list.html', context)
+
+
+def view_webpage(request, id):
+    ed = get_object_or_404(ExternalData, id=id)
+    context = {
+        'external_data': ed
+    }
+    return render(request, 'view-webpage.html', context)
 
 
 def save_webpage(request):
@@ -36,4 +43,9 @@ def save_webpage(request):
         ed.save()
         return redirect('notes_list')
     else:
-        return render(request, 'new_html.html')
+        return render(request, 'new-webpage.html')
+
+
+def delete_webpage(request, id):
+    ExternalData.objects.filter(id=id).delete()
+    return redirect('list_webpages')

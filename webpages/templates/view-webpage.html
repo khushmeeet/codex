@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <section>
+        <a href="{% url 'delete_webpage' external_data.id %}" class="submit-button">Delete Note</a>
+        <div>
+            <div class="note-content" style="white-space: normal">
+                {{ external_data.content | safe }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
