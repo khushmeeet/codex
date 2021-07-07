@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <section>
+        <form action="{% url 'save_webpage' %}" method="post">
+            {% csrf_token %}
+            <button class="submit-button">Save</button>
+            <div class="new-note-form-header">
+                {% render_field ed_form.url placeholder="url of the website..." %}
+            </div>
+        </form>
+        {% if article %}
+            <div>
+                {{ article | safe }}
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

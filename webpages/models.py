@@ -2,8 +2,8 @@ from django.db import models
 
 
 class ExternalData(models.Model):
-    HTML = 'HTML'
-    PDF = 'PDF'
+    HTML = 'html'
+    PDF = 'pdf'
 
     DATA_TYPE_CHOICES = [
         (HTML, 'HTML'),
