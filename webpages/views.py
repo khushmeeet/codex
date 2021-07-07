@@ -10,7 +10,7 @@ from .forms import ExternalDataForm
 
 
 def list_webpages(request):
-    all_external_data = ExternalData.objects.all()
+    all_external_data = ExternalData.objects.all().filter(data_type='pdf')
     # for data in all_external_data:
     #     data.content = safe_html_trim(data.content)
     context = {
@@ -28,7 +28,6 @@ def view_webpage(request, id):
 
 
 def save_webpage(request):
-    ed_form = ExternalDataForm()
     if request.method == 'POST':
         ed_form = ExternalDataForm(request.POST)
         if ed_form.is_valid():
@@ -47,6 +46,7 @@ def save_webpage(request):
             ed.save()
             return redirect('notes_list')
     else:
+        ed_form = ExternalDataForm()
         context = {
            'ed_form': ed_form
         }

@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'compressor',
     'widget_tweaks',
     'main',
-    'webpages'
+    'webpages',
+    'pdf'
 ]
 
 MIDDLEWARE = [
