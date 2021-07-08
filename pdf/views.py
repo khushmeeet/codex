@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 import datetime
 from webpages.forms import ExternalData
 from .forms import ExternalDataPdfForm
@@ -18,10 +18,11 @@ def list_pdfs(request):
     return render(request, 'list-pdf.html', context)
 
 
-def view_pdf(request):
+def view_pdf(request, id):
     ed_pdf = get_object_or_404(ExternalData, id=id)
+    ed_pdf.content = replace_newlines_with_br(ed_pdf.content)
     context = {
-        'external_data': replace_newlines_with_br(ed_pdf)
+        'external_data': ed_pdf
     }
     return render(request, 'view-pdf.html', context)
 

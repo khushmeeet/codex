@@ -4,7 +4,7 @@
     <div id="notes-list">
         {% if all_external_data %}
             {% for data in all_external_data%}
-                <span data-link="{% url 'view_webpage' data.id %}" onclick="new_note(this.id)" id="{{ data.id }}">
+                <span data-link="{% url 'view_pdf' data.id %}" onclick="new_note(this.id)" id="{{ data.id }}">
                     <div>
                         <p>{{ data.content | safe }}</p>
                     </div>
